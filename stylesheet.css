@@ -74,14 +74,39 @@ body {
 .home {
     position: relative;
     width: 100%;
-    justify-content: space-between;
     height: 100vh;
-    background: url(bg/background1.png) no-repeat;
-    background-size: cover;
-    background-position: center;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 70px 10% 0;
+    background: url(bg/background1.png) no-repeat center center;
+    background-size: cover;
+    background-position: center;
+}
+
+@media screen and (max-width: 768px) {
+    .home {
+        height: auto; /* Mengubah tinggi elemen agar fleksibel di layar kecil */
+        padding: 50px 5% 0;
+        background-position: center;
+        background-size: cover; /* Gambar tetap responsif */
+    }
+
+    .home-content h1 {
+        font-size: 2rem; /* Menyesuaikan ukuran teks pada layar kecil */
+        font-weight: 700;
+        margin: -3px 0;
+        opacity: 0;
+        animation: slideRight 1s ease forwards;
+        animation-delay: 1s;
+    }
+
+    .home-content p {
+        font-size: 1rem;
+        opacity: 0;
+        animation: slideLeft 1s ease forwards;
+        animation-delay: 1s;
+    }
 }
 
 .home-content {
@@ -104,22 +129,6 @@ body {
 
 .home-content h3 span {
     color: #0ef;
-}
-
-.home-content h1 {
-    font-size: 56px;
-    font-weight: 700;
-    margin: -3px 0;
-    opacity: 0;
-    animation: slideRight 1s ease forwards;
-    animation-delay: 1s;
-}
-
-.home-content p {
-    font-size: 20px;
-    opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: 1s;
 }
 
 .home-sci a {
